@@ -9,11 +9,23 @@ The Payment API allows our partners to issue payment instructions for us to pay 
 - `POST /payments`
 - `GET /payments/:id`
 
+## API Key Authentication
+
+To access the Payment API endpoints, you must include the API key in the `Authorization` header of your requests. The API key should be provided as follows:
+
+Authorization: YOUR_API_KEY
+
+Replace `YOUR_API_KEY` with your actual API key.
+
 ## POST /payments
 
 Allows creating a new payment.
 
 ### Request
+
+#### Headers
+
+- `Authorization` - The API key for authentication. (Required)
 
 #### Body Parameters
 
@@ -55,9 +67,9 @@ Allows creating a new payment.
   "createdTransaction": {
     "_id": "60f7f8734d2b5e210c3c28ea",
     "paymentType": 0,
-    "clientBank": "Bank of Gotham City",
+    "clientBank": "Bank of Test",
     "clientAccountType": "Savings",
-    "clientName": "Bruce Wayne",
+    "clientName": "John Doe",
     "clientAccountNumber": "12345678",
     "transactionAmount": 1500,
     "transactionCurrency": "USD",
@@ -110,9 +122,9 @@ which is a number like 200, etc.
   "transaction": {
     "_id": "60f7f8734d2b5e210c3c28ea",
     "paymentType": 0,
-    "clientBank": "Bank of Gotham City",
+    "clientBank": "Bank of Test",
     "clientAccountType": "Savings",
-    "clientName": "John Wayne",
+    "clientName": "John Doe",
     "clientAccountNumber": "12345678",
     "transactionAmount": 1500,
     "transactionCurrency": "USD",
@@ -143,6 +155,8 @@ Our API uses numeric status codes to indicate the state of each transaction. Her
 These status codes can be found in the `status` field of the response when you make a GET request to `https://citadel-tools.uc.r.appspot.com/payments/{transaction_id}`.
 
 ---
+
+Please let me know if you need any more changes or additions to your documentation!
 
 #### Error (HTTP Status Code: 404)
 
