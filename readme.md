@@ -144,8 +144,6 @@ These status codes can be found in the `status` field of the response when you m
 
 ---
 
-Please let me know if you need any more changes or additions to your documentation!
-
 #### Error (HTTP Status Code: 404)
 
 - `message` - A string with the error message.
