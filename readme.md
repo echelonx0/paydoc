@@ -113,9 +113,8 @@ Allows you to get the details of any specific payment.
 
 - `transactionHash` - The transaction hash which was saved earlier when we received the request.
 - `validationCode` - The validation code.
-- `paymentStatus` - The payment status
-
-which is a number like 200, etc.
+- `paymentStatus` - The payment status which is a number like 200, etc.
+- `transfer_code` - The transfer code from the transfer or receipt
 
 ```json
 {
@@ -133,6 +132,7 @@ which is a number like 200, etc.
     "validationCode": "123456",
     "transactionHash": "a8d3a48eafe1b2b76f29f74cf1f8552adfe3b7b3a05a1e0e378e9fb69d7e3788",
     "paymentStatus": 200,
+    "transfer_code": "TRF_1ptvuv321ahaa7q",
     "request": {
       "type": "GET",
       "url": "https://citadel-tools.uc.r.appspot.com/payments/"
@@ -155,8 +155,6 @@ Our API uses numeric status codes to indicate the state of each transaction. Her
 These status codes can be found in the `status` field of the response when you make a GET request to `https://citadel-tools.uc.r.appspot.com/payments/{transaction_id}`.
 
 ---
-
-Please let me know if you need any more changes or additions to your documentation!
 
 #### Error (HTTP Status Code: 404)
 
